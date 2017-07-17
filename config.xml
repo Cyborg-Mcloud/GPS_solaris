@@ -2,11 +2,11 @@
 
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.designge.rfc"
+        id        = "com.designge.gpssolaris"
 	    versionCode="1" 
         version   = "0.0.5"
-		package="com.designge.rfc">
-    <name>RFC Admin</name>
+		package="com.designge.gpssolaris">
+    <name>GPS Solaris</name>
 
 
 	<icon src="logo.png" />
@@ -41,7 +41,7 @@
 <preference name="EnableViewportScale"    value="true" />
 
 	<description>
-    RFC Admin
+    GPS Solaris
     </description>
 	
 
@@ -58,7 +58,7 @@
 
 
 	<feature name="App">
-	  <param name="android-package" value="com.designge.rfc"/>
+	  <param name="android-package" value="com.designge.gpssolaris"/>
 	</feature>
 	
   <feature name="File">
