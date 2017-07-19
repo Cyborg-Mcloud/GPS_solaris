@@ -13,25 +13,57 @@
 	a {text-decoration:none; color:white;}
   </style>
   <body style='padding:0; border:0; margin:0;'>
+  <div id='geopos'></div>
 <script>
 
 
+var MyLat;
+var MyLong;
+var MyAlt;
+var MyHead;
+var MySpeed;
+var MyAcc;
 
 function onDeviceReady() 
 	{
-     document.removeEventListener('deviceready', onDeviceReady, false);
+    document.removeEventListener('deviceready', onDeviceReady, false);
+
+	console.log("device ready, getting position");
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true,  maximumAge:0});
+	var opts = { timeout: 5000, enableHighAccuracy: true, maximumAge:0};
+	watchID = navigator.geolocation.watchPosition(onWatchSuccess, onError, opts);
+	
+	//setTimeout("StartWebView();",200); 
+    }
 
 
-	setTimeout("StartWebView();",200); 
+function onSuccess(position) 
+	{
+	console.log("on GPS success");
+		
+	var element = document.getElementById('geopos');
+	
+
+	MyLat=position.coords.latitude ;
+	MyLong=position.coords.longitude ;
+	MyAlt=position.coords.altitude ;
+	MyHead=position.coords.heading ;
+	MySpeed=position.coords.speed ;
+	MyAcc=position.coords.accuracy;
+
+
+element.innerHTML = 'Latitude: '           + MyLat             + '<br />' +
+                            'Longitude: '          + MyLong            + '<br />'+
+							'Accuracy: '          + MyAcc            + '<br />';
     }
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
 var ref="";
 function StartWebView()
-{
-ref = cordova.InAppBrowser.open('http://smonitoring.ge/app/', '_self', 'location=no, clearcache=yes');
-}
+	{
+	ref = cordova.InAppBrowser.open('http://smonitoring.ge/app/', '_self', 'location=no, clearcache=yes');
+	}
 
 
 

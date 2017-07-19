@@ -6,7 +6,7 @@
 	    versionCode="1" 
         version   = "0.0.5"
 		package="com.designge.gpssolaris">
-    <name>GPS Solaris</name>
+    <name>S-Monitoring</name>
 
 
 	<icon src="logo.png" />
@@ -41,7 +41,7 @@
 <preference name="EnableViewportScale"    value="true" />
 
 	<description>
-    GPS Solaris
+    S-Monitoring
     </description>
 	
 
@@ -65,6 +65,9 @@
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
     </feature>
 
+<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/device" />
+<gap:plugin name="cordova-plugin-geolocation" source="npm"/>
 
 	<gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
