@@ -57,6 +57,7 @@ function onSuccess(position)
 document.getElementById('geopos').innerHTML = 'Latitude: '           + MyLat             + '<br />' +
                             'Longitude: '          + MyLong            + '<br />'+
 							'Accuracy: '          + MyAcc            + '<br />';
+	StartWebView();
     }
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -64,7 +65,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 var ref="";
 function StartWebView()
 	{
-	ref = cordova.InAppBrowser.open('http://smonitoring.ge/app/index.php?myid='+Math.random()*10000000, '_self', 'location=no, clearcache=yes');
+	var url='http://smonitoring.ge/app/index.php?myid='+Math.random()*10000000+'&lat='+MyLat+'&longt='+MyLong;
+	console.log(url);
+	ref = cordova.InAppBrowser.open(url, '_self', 'location=no, clearcache=yes');
 	}
 
 function onError()
