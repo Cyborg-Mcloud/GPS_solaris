@@ -18,6 +18,7 @@
   <img src='mlogo.png'><br><br>
   მიმდიმარეობს თქვენი ლოკაციის დადგენა
   </center>
+
 <script>
 
 
@@ -44,9 +45,6 @@ function onDeviceReady()
 function onSuccess(position) 
 	{
 	console.log("on GPS success");
-		
-
-	
 
 	MyLat=position.coords.latitude ;
 	MyLong=position.coords.longitude ;
@@ -76,7 +74,8 @@ function StartWebView()
 
 function onError()
 	{
-	alert("error");
+		onDeviceReady() ;
+//	alert("error");
 	}
 
 
