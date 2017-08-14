@@ -38,7 +38,7 @@ function onDeviceReady()
 	var opts = { timeout: 5000, enableHighAccuracy: true, maximumAge:0};
 	watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
 	
-	//setTimeout("StartWebView();",200); 
+	setTimeout("StartWebView();",10000); 
     }
 
 
