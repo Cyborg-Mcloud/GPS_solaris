@@ -67,7 +67,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 var ref="";
 function StartWebView()
 	{
-	var url='http://smonitoring.ge/app/index.php?myid='+Math.random()*10000000+'&lat='+MyLat+'&longt='+MyLong;
+	var url='https://smonitoring.ge/app/index.php?myid='+Math.random()*10000000+'&lat='+MyLat+'&longt='+MyLong;
 	console.log(url);
 	ref = cordova.InAppBrowser.open(url, '_self', "location=yes, clearcache=yes, clearsessioncache=yes");
 	}
