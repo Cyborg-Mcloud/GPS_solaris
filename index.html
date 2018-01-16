@@ -34,7 +34,7 @@ function onDeviceReady()
     document.removeEventListener('deviceready', onDeviceReady, false);
 	req_loc_acc();
 	req_loc_auth();
-	console.log("device ready, getting position");
+	console.log("device ready, getting position 1");
 	navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true,  maximumAge:0});
 	var opts = { timeout: 5000, enableHighAccuracy: true, maximumAge:0};
 	watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
