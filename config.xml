@@ -84,6 +84,18 @@
 
 <plugin name="cordova-plugin-globalization" source="npm" />
 	<gap:plugin name="cordova-plugin-inappbrowser"  source="npm" />
+	
 
+
+ <platform name="android">
+        <preference name="android-minSdkVersion" value="18" />
+        <allow-intent href="market:*" />
+	 <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-feature android:name="android.hardware.location.gps" />
+			    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+		</config-file>
+  </platform>
 
 </widget>
